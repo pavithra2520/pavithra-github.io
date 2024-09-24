@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Basic validation check
+            if (name && email && message) {
+                // Show thank you message
+                alert("Thank you, your message is submitted.");
+                // Optionally reset the form after submission
+                document.querySelector("form").reset();
+            } else {
+                alert("Please fill in all fields.");
+            }
+        }
+
+        // Ensure the function is bound to the form submit event
+        document.addEventListener("DOMContentLoaded", function() {
+            const form = document.querySelector("form");
+            form.addEventListener("submit", submitForm);
+        });
+    </script>
+
+</head>
+<body>
+    <section class="contact">
+        <div class="contact-content">
+            <h1>Contact Us</h1>
+            <p>If you have any questions or need further assistance, feel free to reach out to us using the form below or contact us directly.</p>
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p><strong>Email:</strong> support@example.com</p>
+                <p><strong>Phone:</strong> 23 456 7890</p>
+                <p><strong>Address:</strong> 1234 Bus Street,chennai,Tamilnadu,india</p>
+            </div>
+            <div class="contact-form">
+                <h2>Contact Form</h2>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <button type="submit" class="cta-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
